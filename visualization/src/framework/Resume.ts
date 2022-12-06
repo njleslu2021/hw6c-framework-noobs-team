@@ -14,7 +14,6 @@ export default interface Resume {
 }
 
 interface Experience {
-    organization: string | null
     title: string | null
     position: string | null
     location: string | null
