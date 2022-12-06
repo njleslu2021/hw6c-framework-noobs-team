@@ -7,6 +7,8 @@ You can launch the backend server by navigating to the “/backend” directory 
 
 The frontend web-based GUI can be launched by navigating to the “/visualization” directory and running the “npm install” and “npm start” commands in the terminal. 
 
+**Note:** If you are encountering the "node: bad option: --openssl-legacy-provider" error when trying to run the frontend by using the "npm start" command, upgrading Node should resolve it. 
+
 # Framework Description
 
 The overarching goal of the framework is to provide visualizations for text-based resumes. For example, the three implemented plugins construct an experience timeline, a word cloud of all the highlighting terms, and a bar chart containing the word counts. The implemented data plugins can take various file types of input resumes (PDF, JSON). The resumes need to be local files for the currently implemented plugins but additional plugins can be easily extended to receive JSONObjects or Strings through other input mediums. Note that our framework is only capable of parsing resumes with a fixed format, example formats are provided under the ”backend/src/test/resources/” directory (https://github.com/CMU-17-214/hw6-analytics-framework-anonymous-team/tree/main/backend/src/test/resources). The framework also provides a GUI layout for the visualizations to be displayed. It allows the user to input the path of their resume, upload a profile photo, give a short description of themselves and render the website based on the given information. 
