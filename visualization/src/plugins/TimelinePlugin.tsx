@@ -22,7 +22,7 @@ function TimelinePlugin(): PersonalPagePlugin {
                     )
                 });
                 experiences.push(
-                    <Event interval={`${experience.startTime} – ${experience.endTime}`} title={experience.organization} subtitle={experience.title}>
+                    <Event interval={`${experience.startTime} – ${experience.endTime}`} title={experience.title} subtitle={experience.position}>
                     { descriptions }
                     </Event>
                 )
