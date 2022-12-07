@@ -43,16 +43,20 @@ public class APP extends NanoHTTPD {
         Map<String, String> params = session.getParms();
         JSONObject res = new JSONObject();
         if (uri.equals("/getDataPlugins")) {
+            System.out.println("Request Received: /getDataPlugins");
             res.put("plugins", plugins.keySet().toArray());
         } else if (uri.equals("/parseResume")) {
+            System.out.println("Request Received: /parseResume");
             if (!params.containsKey("pluginName") || !params.containsKey("resumePath")) {
                 res.put("status", 0);
                 res.put("resume", new JSONObject());
                 res.put("message", "Require two parameters: pluginName and resumePath");
+                System.out.println("Wrong Request: there is no such data plugin: " + params.get("pluginName"));
             } else if(!this.plugins.containsKey(params.get("pluginName"))) {
                 res.put("status", 0);
                 res.put("resume", new JSONObject());
                 res.put("message", "there is no such data plugin: " + params.get("pluginName"));
+                System.out.println("Wrong Request: there is no such data plugin: " + params.get("pluginName"));
             } else {
                 framework.setNewPlugin(plugins.get(params.get("pluginName")));
                 try {
@@ -64,10 +68,12 @@ public class APP extends NanoHTTPD {
                     res.put("message", e.getMessage());
                     res.put("status", 0);
                     res.put("resume", new JSONObject());
-                    res.put("message", "Failed to parse your resume. Please refer to the examples." + e.getMessage());
+                    System.out.println(e.getMessage());
                 } catch (Exception e) {
                     res.put("status", 0);
-                    res.put("resume", new JSONObject());                    
+                    res.put("resume", new JSONObject());
+                    res.put("message", "Failed to parse your resume. Please refer to the examples." + e.getMessage());
+                    System.out.println(e.getMessage());
                 } 
     
             }
