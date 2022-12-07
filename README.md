@@ -7,7 +7,7 @@ You can launch the backend server by navigating to the “/backend” directory 
 
 The frontend web-based GUI can be launched by navigating to the “/visualization” directory and running the “npm install” and “npm start” commands in the terminal. 
 
-**Note: If you are encountering the "node: bad option: --openssl-legacy-provider" error when trying to run the frontend by using the "npm start" command, this is due to node version. You could either upgrading Node or remove the flag '--openssl-legacy-provider' in package.json. **
+**Note: If you are encountering the "node: bad option: --openssl-legacy-provider" error when trying to run the frontend by using the "npm start" command, this is due to Node version. You could either upgrading Node or remove the flag '--openssl-legacy-provider' in package.json.**
 
 # Framework Description
 
