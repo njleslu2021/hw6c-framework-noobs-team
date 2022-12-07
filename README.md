@@ -38,6 +38,8 @@ Now click "Generate". You personal website is here! It features the profile phot
 
 The framework can be easily extended by including additional data and visualization plugins. Both plugins should implement the specified interfaces “DataPlugin.java” (https://github.com/CMU-17-214/hw6-analytics-framework-anonymous-team/blob/main/backend/src/main/java/edu/cmu/cs/cs214/hw6/framework/DataPlugin.java) and “PersonalPagePlugin.ts” (https://github.com/CMU-17-214/hw6-analytics-framework-anonymous-team/blob/main/visualization/src/framework/PersonalPagePlugin.ts) for data and visualization plugins, respectively. 
 
+To load any new plugins please add it in the "/backend/src/main/resources/META-INF/services/edu.cmu.cs.cs214.hw6.framework.DataPlugin" file. 
+
 
 
 - **Data part**
