@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@iconify/react": "^4.0.1",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-scroll": "^1.8.5",
     "@types/webpack-env": "^1.18.0"
