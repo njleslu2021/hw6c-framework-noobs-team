@@ -40,8 +40,8 @@ function WordCloudPlugin(): PersonalPagePlugin {
                     <AnyChart
                         type="tagCloud"
                         data={data}
-                        width={1000}
-                        height={1000}
+                        width={800}
+                        height={800}
                         title="Top 50 Words Appeared in the Resume"
                     />
                 </div>
