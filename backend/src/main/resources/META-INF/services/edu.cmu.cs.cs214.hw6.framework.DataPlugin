@@ -4,3 +4,6 @@
 
 edu.cmu.cs.cs214.hw6.plugins.PDFPlugin
 edu.cmu.cs.cs214.hw6.plugins.JSONPlugin
+edu.cmu.cs.cs214.hw6.plugins.TextPlugin
+edu.cmu.cs.cs214.hw6.plugins.CSVPlugin
+edu.cmu.cs.cs214.hw6.plugins.DOCPlugin
