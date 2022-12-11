@@ -14,6 +14,7 @@ import edu.cmu.cs.cs214.hw6.framework.Experience;
 import edu.cmu.cs.cs214.hw6.framework.ResumeFramework;
 
 public class CSVPlugin implements DataPlugin{
+    private final int num3 = 3;
 
     private List<String> splitDocumentText;
     @Override
@@ -25,7 +26,7 @@ public class CSVPlugin implements DataPlugin{
     @Override
     public void parseDataResource(String path) throws IOException {
         
-        Path temp_path = Paths.get(path);
+        Path tempPath = Paths.get(path);
  
         // To read file to byte array 
         // Display message only
@@ -37,7 +38,7 @@ public class CSVPlugin implements DataPlugin{
         // Creating a List class object of string type
         // as data in file to be read is words
         this.splitDocumentText = Files.readAllLines(
-            temp_path, StandardCharsets.UTF_8);
+            tempPath, StandardCharsets.UTF_8);
         System.out.println(this.splitDocumentText);
     }
 
@@ -49,14 +50,14 @@ public class CSVPlugin implements DataPlugin{
     @Override
     public String getFirstName() {
         String info = splitDocumentText.get(0);
-        String[] splitName = info.split(" ");;
+        String[] splitName = info.split(" ");
         return splitName[0];
     }
 
     @Override
     public String getLastName() {
         String info = splitDocumentText.get(0);
-        String[] splitName = info.split(" ");;
+        String[] splitName = info.split(" ");
         return splitName[1];
     }
 
@@ -78,8 +79,8 @@ public class CSVPlugin implements DataPlugin{
     public String getAddress() {
         String info = splitDocumentText.get(1);
         String[] splitInfo = info.split(" +\\| +");
-        if (splitInfo.length > 3) {
-            return splitInfo[3];
+        if (splitInfo.length > num3) {
+            return splitInfo[num3];
         }
         return null;
     }
@@ -127,7 +128,7 @@ public class CSVPlugin implements DataPlugin{
         String endDate = splitDate[splitDate.length - 1].trim();
 
         List<String> descriptions = new ArrayList<>(); 
-        startIdx = startIdx + 3;
+        startIdx = startIdx + num3;
 
         while (startIdx < splitDocumentText.size() && splitDocumentText.get(startIdx).trim() != "") {
             if(splitDocumentText.get(startIdx).trim().equals("")){
@@ -165,14 +166,14 @@ public class CSVPlugin implements DataPlugin{
     }
 
     public static void main(String args[]) throws IOException{
-        Path temp_path = Paths.get("src/test/resources/test.txt");
+        int num3 = 3;
+        Path temPath = Paths.get("src/test/resources/test.txt");
  
         // To read file to byte array
         // byte[] bytes = Files.readAllBytes(temp_path);
  
         // Display message only
-        System.out.println(
-            "Read text file using Files class");
+        System.out.println("Read text file using Files class");
  
         // Reading the file to String List
         @SuppressWarnings("unused")
@@ -180,7 +181,7 @@ public class CSVPlugin implements DataPlugin{
         // Creating a List class object of string type
         // as data in file to be read is words
         List<String> allLines = Files.readAllLines(
-            temp_path, StandardCharsets.UTF_8);
+            temPath, StandardCharsets.UTF_8);
         System.out.println(allLines.get(0));
         List<Integer> startIdxs = new ArrayList<>();
         // List<Experience> experiences = new ArrayList<>();
@@ -205,7 +206,7 @@ public class CSVPlugin implements DataPlugin{
             String endDate = splitDate[splitDate.length - 1].trim();
 
             List<String> descriptions = new ArrayList<>(); 
-            idx = idx + 3;
+            idx = idx + num3;
             while (idx < allLines.size() && allLines.get(idx).trim() != "") {
                 if(allLines.get(idx).trim().equals("")){
                     break;
