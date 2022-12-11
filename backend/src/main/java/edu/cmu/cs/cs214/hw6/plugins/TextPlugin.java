@@ -165,6 +165,7 @@ public class TextPlugin implements DataPlugin{
         return experiences;
     }
 
+    /** 
     public static void main(String args[]) throws IOException{
         int num3 = 3;
         Path temPath = Paths.get("src/test/resources/test.txt");
@@ -225,5 +226,5 @@ public class TextPlugin implements DataPlugin{
             System.out.println(descriptions);
         }
     }
-    
+    */
 }

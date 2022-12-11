@@ -165,63 +165,63 @@ public class CSVPlugin implements DataPlugin{
         return experiences;
     }
 
-    public static void main(String args[]) throws IOException{
-        int num3 = 3;
-        Path temPath = Paths.get("src/test/resources/test.txt");
+    // public static void main(String args[]) throws IOException{
+    //     int num3 = 2 + 1;
+    //     Path temPath = Paths.get("src/test/resources/test.txt");
  
-        // To read file to byte array
-        // byte[] bytes = Files.readAllBytes(temp_path);
+    //     // To read file to byte array
+    //     // byte[] bytes = Files.readAllBytes(temp_path);
  
-        // Display message only
-        System.out.println("Read text file using Files class");
+    //     // Display message only
+    //     System.out.println("Read text file using Files class");
  
-        // Reading the file to String List
-        @SuppressWarnings("unused")
+    //     // Reading the file to String List
+    //     @SuppressWarnings("unused")
  
-        // Creating a List class object of string type
-        // as data in file to be read is words
-        List<String> allLines = Files.readAllLines(
-            temPath, StandardCharsets.UTF_8);
-        System.out.println(allLines.get(0));
-        List<Integer> startIdxs = new ArrayList<>();
-        // List<Experience> experiences = new ArrayList<>();
+    //     // Creating a List class object of string type
+    //     // as data in file to be read is words
+    //     List<String> allLines = Files.readAllLines(
+    //         temPath, StandardCharsets.UTF_8);
+    //     System.out.println(allLines.get(0));
+    //     List<Integer> startIdxs = new ArrayList<>();
+    //     // List<Experience> experiences = new ArrayList<>();
 
-        for (int i = 0; i < allLines.size(); i++) {
-            if (allLines.get(i).trim().equals("EDUCATION") ||
-                allLines.get(i).trim().equals("EXPERIENCE") ||
-                allLines.get(i).trim().equals("")) {
-                    if (allLines.get(i + 1).split(" ").length > 1) {
-                        startIdxs.add(i + 1);
-                    }
-            }
-        }
-        for (int idx : startIdxs) {
-            String[] splitTitle = allLines.get(idx).split(" "); 
-            System.out.println();
-            String[] splitDate = allLines.get(idx + 2).split(" - ");
-            String title = String.join(" ", Arrays.copyOfRange(splitTitle, 0, splitTitle.length - 2)).trim();
-            String location = String.join(" ", Arrays.copyOfRange(splitTitle, splitTitle.length - 2, splitTitle.length)).trim();
-            String position = allLines.get(idx + 1).trim(); 
-            String startDate = splitDate[0].trim();
-            String endDate = splitDate[splitDate.length - 1].trim();
+    //     for (int i = 0; i < allLines.size(); i++) {
+    //         if (allLines.get(i).trim().equals("EDUCATION") ||
+    //             allLines.get(i).trim().equals("EXPERIENCE") ||
+    //             allLines.get(i).trim().equals("")) {
+    //                 if (allLines.get(i + 1).split(" ").length > 1) {
+    //                     startIdxs.add(i + 1);
+    //                 }
+    //         }
+    //     }
+    //     for (int idx : startIdxs) {
+    //         String[] splitTitle = allLines.get(idx).split(" "); 
+    //         System.out.println();
+    //         String[] splitDate = allLines.get(idx + 2).split(" - ");
+    //         String title = String.join(" ", Arrays.copyOfRange(splitTitle, 0, splitTitle.length - 2)).trim();
+    //         String location = String.join(" ", Arrays.copyOfRange(splitTitle, splitTitle.length - 2, splitTitle.length)).trim();
+    //         String position = allLines.get(idx + 1).trim(); 
+    //         String startDate = splitDate[0].trim();
+    //         String endDate = splitDate[splitDate.length - 1].trim();
 
-            List<String> descriptions = new ArrayList<>(); 
-            idx = idx + num3;
-            while (idx < allLines.size() && allLines.get(idx).trim() != "") {
-                if(allLines.get(idx).trim().equals("")){
-                    break;
-                }
-                String cleanText = allLines.get(idx).replace("\u2022 ", "");
-                descriptions.add(cleanText.trim());
-                idx++;
-            }
-            System.out.println(title);
-            System.out.println(position);
-            System.out.println(location);
-            System.out.println(startDate);
-            System.out.println(endDate);
-            System.out.println(descriptions);
-        }
-    }
+    //         List<String> descriptions = new ArrayList<>(); 
+    //         idx = idx + num3;
+    //         while (idx < allLines.size() && allLines.get(idx).trim() != "") {
+    //             if(allLines.get(idx).trim().equals("")){
+    //                 break;
+    //             }
+    //             String cleanText = allLines.get(idx).replace("\u2022 ", "");
+    //             descriptions.add(cleanText.trim());
+    //             idx++;
+    //         }
+    //         System.out.println(title);
+    //         System.out.println(position);
+    //         System.out.println(location);
+    //         System.out.println(startDate);
+    //         System.out.println(endDate);
+    //         System.out.println(descriptions);
+    //     }
+    // }
     
 }
