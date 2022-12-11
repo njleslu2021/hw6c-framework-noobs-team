@@ -160,6 +160,7 @@ public class DOCPlugin implements DataPlugin {
         return new Experience(title, position, location, startDate, endDate, descriptions);
     }
     
+    /**
     public static void main(String[] args) {
         List<String> splitDocumentText = new ArrayList<>();
         try {
@@ -238,4 +239,5 @@ public class DOCPlugin implements DataPlugin {
         System.out.println(skills);
 
     }
+    */
 }
