@@ -14,7 +14,7 @@ import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 
 public class DOCPlugin implements DataPlugin {
     private final int num3 = 3;
-    List<String> splitDocumentText = new ArrayList<>();
+    private List<String> splitDocumentText = new ArrayList<>();
     @Override
     public void onRegister(ResumeFramework framework) {        
     }
