@@ -21,14 +21,13 @@ public class CSVPlugin implements DataPlugin{
         
     }
 
+    // Use file reader to read all lines of splited text document into strings
     @Override
     public void parseDataResource(String path) throws IOException {
         
         Path temp_path = Paths.get(path);
  
-        // To read file to byte array
-        // byte[] bytes = Files.readAllBytes(temp_path);
- 
+        // To read file to byte array 
         // Display message only
         System.out.println(
             "Read CSV file using Files class");
@@ -129,11 +128,7 @@ public class CSVPlugin implements DataPlugin{
 
         List<String> descriptions = new ArrayList<>(); 
         startIdx = startIdx + 3;
-        // System.out.println(title);
-        // System.out.println(position);
-        // System.out.println(location);
-        // System.out.println(startDate);
-        // System.out.println(endDate);
+
         while (startIdx < splitDocumentText.size() && splitDocumentText.get(startIdx).trim() != "") {
             if(splitDocumentText.get(startIdx).trim().equals("")){
                 break;

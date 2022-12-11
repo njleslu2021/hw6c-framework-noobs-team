@@ -19,6 +19,8 @@ public class DOCPlugin implements DataPlugin {
     public void onRegister(ResumeFramework framework) {        
     }
 
+    // Use a third party library called XWPFDocument and File input stream to read
+    // all lines of text from a .docx file.
     @Override
     public void parseDataResource(String path) throws IOException {
         try {
