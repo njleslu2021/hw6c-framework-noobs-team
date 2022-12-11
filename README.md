@@ -1,5 +1,23 @@
 # hw6-analytics-framework-anonymous-team
 
+## hw6c-framework-noobs-team extended 5 plugins for such framework
+
+**DOCPlugin**
+A data plugin that uses a third party library called Apache POI-XWPF (XML Word Processor Format), which can read and write .docx files of MS-Word. For such plugin, we need to provide a Microsoft Word document named with .docx extension, stored in resources file directory (https://github.com/CMU-17-214/hw6-analytics-framework-anonymous-team/tree/main/backend/src/test/resources). This plugin requires the user to write the resumes in a specific configuration and format in order for the plugin to successfully read all related information.
+
+**TextPlugin**
+A type of data plugin similar to DOCPlugin except it needs a .txt file to read info about a person.
+
+**CSVPlugin**
+A type of data plugin similar to DOCPlugin except it needs a .csv file to read info about a person.
+
+**MoreOfMePlugin**
+A type of added visualization plugin which presents the same information read from backend
+plugins in a different way than AboutMePlugin. In AboutMe, we just have a photo and a paragraph of introduction written by the user, after starting the framework. However, in MoreOfMe, we have an additional section Of Skills-Set organized as a list in top-down way and some bullets of contact information including email, phone number and linkedIn address.
+
+**WordCloudPlugin**
+A type of newly added visual plugin which is similar to word count plugin but different in representation. In this plugin, the word will be represented as clouds showing their number of appearances. It is more fancy than presenting singly with a bar chart.
+
 # How To Start 
 
 The framework uses nanohttpd for communication between the backend and frontend. 
